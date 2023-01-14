@@ -8,10 +8,11 @@ export const variables = css`
         --color-accents: #F9D9AA;
         --color-recomendation: #FFCB7C;
         --color-background: #F6EBDA;
-        --color-gray-light: #7e7d7a;
+        --color-grey-light: #7e7d7a;
         
         // GRADIENTS
         --gradient-glass: linear-gradient(to bottom, #FFF 40%, #FFF 70%);
+        --shadow-light: 6px 2px 24px 0 rgba(0,0,0,.13);
 
         // TYPOGRAPHY
         --fs-heading: 4.8rem;
@@ -21,5 +22,8 @@ export const variables = css`
         --fs-small: 1.6rem;
         --fs-description: 1.4rem;
         --fs-tiny: 1.2rem;
+
+        // SPACES
+        --website-width: 115.5rem; 
     }
 `;
