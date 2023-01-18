@@ -4,18 +4,19 @@ import { FiSearch } from "react-icons/fi";
 
 const SearchBar : FC = () => {
     return(
-        <StyledWrapper>
+        <StyledSearchBarWrapper>
             <StyledSearchButton>
                 <FiSearch />
             </StyledSearchButton>
             <StyledInput type="text" placeholder="Search" />
-        </StyledWrapper>   
+        </StyledSearchBarWrapper>   
     )
 }
 
-const StyledWrapper = styled.label`
+export const StyledSearchBarWrapper = styled.label`
     display: block;
     position: relative;
+    min-width: 28rem;
 
     background-color: white;
     border-radius: 3.5rem;

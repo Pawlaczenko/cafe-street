@@ -1,7 +1,8 @@
 import { FC } from "react";
 import styled from "styled-components";
-import Logo from "../Logo/Logo";
+import Logo, { StyledLogoWrapper } from "../Logo/Logo";
 import SearchBar from "../SearchBar/SearchBar";
+import CartButton from "./CartButton";
 import NavigationList from "./NavigationList/NavigationList";
 
 const Navigation : FC = () => {
@@ -11,6 +12,7 @@ const Navigation : FC = () => {
             <Logo />
             <NavigationList />
             <SearchBar />
+            <CartButton />
         </NavigationWrapper>
     )
 }
@@ -22,6 +24,11 @@ const NavigationWrapper = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 4rem;
+
+    & > ${StyledLogoWrapper}{
+        margin-right: auto;
+    }
 `;
 
 export default Navigation;

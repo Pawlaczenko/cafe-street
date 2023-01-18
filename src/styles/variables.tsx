@@ -12,7 +12,7 @@ export const variables = css`
         
         // GRADIENTS
         --gradient-glass: linear-gradient(to bottom, #FFF 40%, #FFF 70%);
-        --shadow-light: 6px 2px 24px 0 rgba(0,0,0,.13);
+        --shadow-light: .6rem .2rem 1rem 0 rgba(0,0,0,.13);
 
         // TYPOGRAPHY
         --fs-heading: 4.8rem;

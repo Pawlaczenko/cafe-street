@@ -10,7 +10,7 @@ const Logo : FC = () => {
     );
 }
 
-const StyledLogoWrapper = styled.a`
+export const StyledLogoWrapper = styled.a`
     display: block;
 `;
 
