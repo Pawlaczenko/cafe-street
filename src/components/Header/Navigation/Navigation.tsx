@@ -1,9 +1,9 @@
 import { FC } from "react";
 import styled from "styled-components";
 
-const NavigationList : FC = () => {
+const Navigation : FC = () => {
     return (
-        <StyledNavigationList>        
+        <StyledNavigation>        
                 <StyledNavigationItem href="#about">
                     About us
                 </StyledNavigationItem>                    
@@ -13,11 +13,11 @@ const NavigationList : FC = () => {
                 <StyledNavigationItem href="#delivery">
                     Delivery
                 </StyledNavigationItem>            
-        </StyledNavigationList>
+        </StyledNavigation>
     );
 }
 
-export const StyledNavigationList = styled.div`
+export const StyledNavigation = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,4 +52,4 @@ const StyledNavigationItem = styled.a`
     }
 `;
 
-export default NavigationList;
+export default Navigation;

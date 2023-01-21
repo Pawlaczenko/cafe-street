@@ -3,21 +3,21 @@ import styled from "styled-components";
 import Logo, { StyledLogoWrapper } from "../Logo/Logo";
 import SearchBar from "../SearchBar/SearchBar";
 import CartButton from "./CartButton";
-import NavigationList from "./NavigationList/NavigationList";
+import Navigation from "./Navigation/Navigation";
 
-const Navigation : FC = () => {
+const Header : FC = () => {
     
     return(
-        <NavigationWrapper>
+        <HeaderWrapper>
             <Logo />
-            <NavigationList />
+            <Navigation />
             <SearchBar />
             <CartButton />
-        </NavigationWrapper>
+        </HeaderWrapper>
     )
 }
 
-const NavigationWrapper = styled.nav`
+const HeaderWrapper = styled.header`
     --navigation-padding: 3.6rem;
 
     padding: var(--navigation-padding) 0;
@@ -31,4 +31,4 @@ const NavigationWrapper = styled.nav`
     }
 `;
 
-export default Navigation;
+export default Header;

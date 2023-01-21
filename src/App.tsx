@@ -1,12 +1,14 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import Navigation from './components/Navigation/Navigation';
+import Header from './components/Header/Header';
+import HomeSection from './components/HomeSection/HomeSection';
 
 const App : FC = () => {
 
   return (
     <Wrapper>
-		  <Navigation />
+		  <Header />
+      <HomeSection />
     </Wrapper>
   )
 }
