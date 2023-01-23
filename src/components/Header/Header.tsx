@@ -4,20 +4,27 @@ import Logo, { StyledLogoWrapper } from "../Logo/Logo";
 import SearchBar from "../SearchBar/SearchBar";
 import CartButton from "./CartButton";
 import Navigation from "./Navigation/Navigation";
+import {StyledSection} from '../Section/Section';
 
 const Header : FC = () => {
-    
     return(
-        <HeaderWrapper>
-            <Logo />
-            <Navigation />
-            <SearchBar />
-            <CartButton />
-        </HeaderWrapper>
+        <Wrapper as={"header"}>
+            <HeaderWrapper>
+                <Logo />
+                <Navigation />
+                <SearchBar />
+                <CartButton />
+            </HeaderWrapper>
+        </Wrapper>
     )
 }
 
-const HeaderWrapper = styled.header`
+const Wrapper = styled(StyledSection)`
+    position: fixed;
+    width: 100%;
+`;
+
+const HeaderWrapper = styled.div`
     --navigation-padding: 3.6rem;
 
     padding: var(--navigation-padding) 0;
