@@ -9,9 +9,10 @@ export const variables = css`
         --color-recomendation: #FFCB7C;
         --color-background: #F6EBDA;
         --color-grey-light: #7e7d7a;
-        
+        --color-star: #FFD057;
+
         // GRADIENTS
-        --gradient-glass: linear-gradient(to bottom, #FFF 40%, #FFF 70%);
+        --gradient-glass: linear-gradient(140deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.7) 100%);
         --shadow-light: .6rem .2rem 1rem 0 rgba(0,0,0,.13);
 
         // TYPOGRAPHY

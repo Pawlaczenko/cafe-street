@@ -6,6 +6,7 @@ import { StyledSection } from '../../layout/Section/Section';
 import Paragraph from '../Paragraph/Paragraph';
 import {PrimaryButton, TransparentButton} from '../Button/Button';
 import CartButton from '../Header/CartButton';
+import Showcase from '../Showcase/Showcase';
 
 const HeroSection : FC = () => {
   return (
@@ -22,7 +23,7 @@ const HeroSection : FC = () => {
           </ButtonContainer>
         </FlexContainer>
         <FlexContainer>
-      
+          <Showcase />
         </FlexContainer>
       </StyledHomeSection>
     </Wrapper>
