@@ -22,7 +22,7 @@ const HeroSection : FC = () => {
             <TransparentButton isTiny>More menu</TransparentButton>
           </ButtonContainer>
         </FlexContainer>
-        <FlexContainer>
+        <FlexContainer end>
           <Showcase />
         </FlexContainer>
       </StyledHomeSection>
@@ -55,12 +55,12 @@ const ButtonContainer = styled.div`
   gap: 2rem;
 `;
 
-const FlexContainer = styled.div`
+const FlexContainer = styled.div<{end?: boolean}>`
   flex: 1;
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: ${(props) => props.end ? "flex-end" : "flex-start"};
   gap: 3rem;
 `;
 
