@@ -4,7 +4,7 @@ import Logo, { StyledLogoWrapper } from "../Logo/Logo";
 import SearchBar from "../SearchBar/SearchBar";
 import CartButton from "./CartButton";
 import Navigation from "./Navigation/Navigation";
-import {StyledSection} from '../Section/Section';
+import {StyledSection} from '../../layout/Section/Section';
 
 const Header : FC = () => {
     return(
