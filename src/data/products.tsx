@@ -1,9 +1,9 @@
-interface iProduct  {
+export interface iProduct  {
     name: string;
     rating: number;
     image_path: string;
     price: number;
-    description: string;    
+    description?: string;    
 }
 
 export const PRODUCTS : Array<iProduct> = [

@@ -19,14 +19,22 @@ const StyledButton = styled.a<IButton>`
     
     font-weight: 600;
     font-size: ${(props) => props.isTiny ? "var(--fs-tiny)" : "var(--fs-description)" };
+
+    background-color: var(--background-color);
+    color: var(--font-color);
+
+    &:hover {
+        background-color: var(--font-color);
+        color: var(--background-color);
+    }
 `;
 
 export const PrimaryButton = styled(StyledButton)`
-      background-color: var(--color-secondary);
-      color: white;
+      --background-color: var(--color-secondary);
+      --font-color: white;
 `;
 
 export const TransparentButton = styled(StyledButton)`
-      background-color: transparent;
-      color: var(--color-primary);
+      --background-color: none;
+      --font-color: var(--color-primary);
 `;
