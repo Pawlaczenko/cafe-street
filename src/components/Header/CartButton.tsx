@@ -3,30 +3,33 @@ import {FiShoppingCart} from "react-icons/fi";
 import styled from 'styled-components';
 
 interface IProps {
-    isPrimary?: boolean
+    isPrimary?: boolean,
+    isSmall?: boolean
 }
 
-const CartButton : FC<IProps> = ({isPrimary}) => {
+const CartButton : FC<IProps> = ({isPrimary, isSmall}) => {
   return (
-    <StyledCartButton isPrimary={isPrimary}>
+    <StyledCartButton isPrimary={isPrimary} isSmall={isSmall}>
         <FiShoppingCart />
     </StyledCartButton>
   )
 }
 
-const StyledCartButton = styled.button<IProps>`
+export const StyledCartButton = styled.button<IProps>`
     border: none;
     border-radius: 100%;
     background-color: ${(props) => props.isPrimary ? "var(--color-primary)" : "transparent"};
     cursor: pointer;
 
-    --button-size: ${(props) => props.isPrimary ? "2.5rem" : "3.2rem"};
+    --button-size: ${(props) => props.isSmall ? "2.5rem" : "3.2rem"};
     width: var(--button-size);
     height: var(--button-size);
     position: relative;
 
     & > svg {
         color: ${(props) => props.isPrimary ? "white" : "black"};
+        width: var(--buttons-size);
+        height: var(--buttons-size);
     }
 
     &:hover,

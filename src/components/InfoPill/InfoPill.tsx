@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import styled from 'styled-components';
 import {FiStar} from "react-icons/fi";
+import { glassBackDrop } from '../../styles/mixins';
 
 interface IProps {
     big?: boolean,
@@ -9,9 +10,9 @@ interface IProps {
     children: React.ReactNode
 }
 
-export const StarInfoPill : FC<IProps> = ({big, children}) => {
+export const StarInfoPill : FC<IProps> = ({big, narrow, children}) => {
   return (
-    <InfoPill big={big} bold narrow>
+    <InfoPill big={big} bold narrow={narrow}>
         {children}
         <FiStar />
     </InfoPill>
@@ -37,24 +38,7 @@ const InfoPill = styled.div<IProps>`
     font-size: ${(props) => props.big ? "var(--fs-title)" : "var(--fs-description)"};
     font-weight: ${(props) => props.bold ? 800 : 600};
 
-    &:before {
-        --glass-padding: ${(props) => props.big ? "1.5rem" : "1rem"};
-        --glass-position: calc(-1 * (var(--glass-padding) / 2));
-
-        content: "";
-        display: block;
-        position: absolute;
-        z-index: -1;
-        width: calc(100% + var(--glass-padding));
-        height: calc(100% + var(--glass-padding));
-
-        left: var(--glass-position);
-        top: var(--glass-position);
-
-        background: var(--gradient-glass);
-        backdrop-filter: blur(10px);
-        border-radius: var(--radius);
-    }
+    ${glassBackDrop};
 
     & > svg {
         fill: var(--color-star);

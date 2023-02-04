@@ -18,7 +18,7 @@ const HeroSection : FC = () => {
           </Heading>
           <Paragraph> Boost your productivity and build your mood with a glass of coffee in the morning </Paragraph>
           <ButtonContainer>
-            <PrimaryButton>Order Now <CartButton isPrimary /> </PrimaryButton>
+            <PrimaryButton>Order Now <CartButton isPrimary isSmall /> </PrimaryButton>
             <TransparentButton isTiny>More menu</TransparentButton>
           </ButtonContainer>
         </FlexContainer>
@@ -32,8 +32,9 @@ const HeroSection : FC = () => {
 
 const StyledHomeSection = styled.div`
   display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
+  padding-top: 20vh;
 
   & p {
     width: 80%;
@@ -42,10 +43,11 @@ const StyledHomeSection = styled.div`
 
 const Wrapper = styled(StyledSection)`
     background: 
-      url(${bgImage}) no-repeat top right,
-      url(${bgImage}) no-repeat bottom left;
+    url(${bgImage}) no-repeat top right,
+    url(${bgImage}) no-repeat bottom left;
+    background-color: var(--color-background);
     background-size: 25%;
-    height: 100vh;
+    min-height: 100vh;
 `
 
 const ButtonContainer = styled.div`

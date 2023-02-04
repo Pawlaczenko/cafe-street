@@ -52,6 +52,7 @@ const StyledHeading = styled.h1<IHeadingProps>`
   & > u {
     text-decoration-color: var(--color-primary);
     text-underline-offset: .5rem;
+    text-decoration-thickness: .4rem;
   }
 `;
 

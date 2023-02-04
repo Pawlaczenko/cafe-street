@@ -2,6 +2,7 @@ import { FC } from 'react';
 import styled from 'styled-components';
 import Header from './components/Header/Header';
 import HeroSection from './components/HeroSection/HeroSection';
+import PopularSection from './components/PopularSection/PopularSection';
 
 const App : FC = () => {
 
@@ -9,6 +10,7 @@ const App : FC = () => {
     <Wrapper>
 		  <Header />
       <HeroSection />
+      <PopularSection />
     </Wrapper>
   )
 }

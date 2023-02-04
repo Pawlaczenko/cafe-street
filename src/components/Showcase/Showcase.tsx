@@ -17,7 +17,7 @@ const Showcase : FC = () => {
   return (
     <Wrapper>
         <InfoPill big>{product.name}</InfoPill>
-        <StarInfoPill big>{product.rating}</StarInfoPill>
+        <StarInfoPill big narrow>{product.rating}</StarInfoPill>
         <InfoPill big>{product.price}$</InfoPill>
         <StyledImageHolder>
           <img src={product.image_path} alt="coffee" />
