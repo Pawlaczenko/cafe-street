@@ -11,12 +11,12 @@ interface IProductCard {
     price: number,
     rating: number,
     description: string,
-    glass?: boolean
+    isGlass: boolean
 }
 
-const ProductCard : FC<IProductCard> = ({price,rating,title,description,glass}) => {
+const ProductCard : FC<IProductCard> = ({price,rating,title,description,isGlass}) => {
   return (
-    <StyledCard>
+    <StyledCard isGlass={isGlass}>
         <StyledCardImage>
             <img src={photo} alt="caffee" />
             <StarInfoPill big={false}>{rating}</StarInfoPill>
@@ -25,21 +25,22 @@ const ProductCard : FC<IProductCard> = ({price,rating,title,description,glass}) 
           <StyledCardText>{title}</StyledCardText>
           <StyledCardText weight={800}>{price}$</StyledCardText>
           <StyledCardDescription>{description}</StyledCardDescription>
-          <CartButton isPrimary />
+          <CartButton isPrimary={true} />
         </StyledCardInfo>
     </StyledCard>
   )
 }
 
-const StyledCard = styled.div`
+const StyledCard = styled.div<{isGlass : boolean}>`
     --card-border-radius: 1.5rem;
     
     background-color: white;
     border-radius: var(--card-border-radius);
     max-width: 35.5rem;
     padding: 2.4rem 1.8rem;
+    box-shadow: var(--shadow-heavy);
 
-    ${glassBackDrop};
+    ${(props) => props.isGlass && glassBackDrop};
 `;
 
 const StyledCardImage = styled.figure`
@@ -78,6 +79,7 @@ const StyledCardInfo = styled.div`
       "title price"
       "description cart";
     grid-column-gap: 3rem;
+    align-items: center;
     
     & > ${StyledCardText} {
       &:nth-child(1){grid-area: title;}

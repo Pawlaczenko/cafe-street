@@ -34,7 +34,7 @@ const StyledHomeSection = styled.div`
   display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
-  padding-top: 20vh;
+  padding-top: 25vh;
 
   & p {
     width: 80%;

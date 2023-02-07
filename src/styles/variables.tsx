@@ -14,6 +14,7 @@ export const variables = css`
         // GRADIENTS
         --gradient-glass: linear-gradient(140deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.7) 100%);
         --shadow-light: .6rem .2rem 1rem 0 rgba(0,0,0,.13);
+        --shadow-heavy: 1rem 1rem 3.2rem 0 rgba(0,0,0,.25);
 
         // TYPOGRAPHY
         --fs-heading: 4.8rem;

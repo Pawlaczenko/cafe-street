@@ -11,23 +11,49 @@ const PopularSection : FC = () => {
     <Wrapper>
         <StyledPopularSection>
             <Heading level={HeadingLevel.SubHeading}>Popular <u>Now</u></Heading>
-            <div>
-              <ProductCard title={'Vanilla Latte'} price={16} rating={4.5} description="bread with meat and vegetables" glass />
-            </div>
+            <CardHolder>
+              <ProductCard title={'Vanilla Latte'} price={16} rating={4.5} description="bread with meat and vegetables" isGlass />
+              <ProductCard title={'Vanilla Latte'} price={16} rating={4.5} description="bread with meat and vegetables" isGlass />
+              <ProductCard title={'Vanilla Latte'} price={16} rating={4.5} description="bread with meat and vegetables" isGlass />
+            </CardHolder>
         </StyledPopularSection>
     </Wrapper>
   )
 }
 
 const Wrapper = styled(StyledSection)`
-    position: relative;
+    width: 100%;
     z-index: 1;
+    position: absolute;
+    bottom: -35vh;
 `;
 
 const StyledPopularSection = styled.div`
+    width: 100%;
+`;
+
+const CardHolder = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-top: 3rem;
+
+  &:before {
+    --cont-width: 120%;
+
+    content: "";
     position: absolute;
-    top: -25vh;
-    padding-bottom: 10rem;
+    left: calc((100% - var(--cont-width)) / 2);
+    top: 20%;
+    z-index: -1;
+
+    background-color: var(--color-accents);
+    width: var(--cont-width);
+    height: 95%;
+    border-radius: 6.4rem;
+  }
 `;
 
 export default PopularSection

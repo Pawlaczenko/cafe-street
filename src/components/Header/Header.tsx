@@ -22,6 +22,7 @@ const Header : FC = () => {
 const Wrapper = styled(StyledSection)`
     position: fixed;
     width: 100%;
+    z-index: 50;
 `;
 
 const HeaderWrapper = styled.div`
