@@ -1,10 +1,24 @@
-function App() {
+import { FC } from 'react';
+import styled from 'styled-components';
+import Header from './components/Header/Header';
+import HeroSection from './components/HeroSection/HeroSection';
+import PopularSection from './components/PopularSection/PopularSection';
+
+const App : FC = () => {
 
   return (
-    <div className="App">
-		  Hello world
-    </div>
+    <Wrapper>
+		  <Header />
+      <HeroSection />
+      <PopularSection />
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+    position: relative;
+    width: 100%;
+    
+`;
 
 export default App

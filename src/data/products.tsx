@@ -1,4 +1,4 @@
-interface iProduct  {
+export interface iProduct  {
     name: string;
     rating: number;
     image_path: string;

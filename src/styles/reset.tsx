@@ -20,6 +20,10 @@ export const reset = css`
         line-height: 1.5;
         -webkit-font-smoothing: antialiased;
     }
+    a {
+        color: inherit; /* blue colors for links too */
+        text-decoration: inherit; /* no underline */
+    }   
     // 6. Improve media defaults
     img, picture, video, canvas, svg {
         display: block;
