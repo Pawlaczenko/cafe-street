@@ -9,7 +9,7 @@ const Paragraph : FC<{children: React.ReactNode}> = ({children}) => {
   )
 }
 
-const StyledParagraph = styled.p`
+export const StyledParagraph = styled.p`
     color: var(--color-grey-light);
     font-size: var(--fs-paragraph);
 `;

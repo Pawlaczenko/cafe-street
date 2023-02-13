@@ -35,5 +35,8 @@ export const variables = css`
 `;
 
 export const BREAKPOINTS = {
-    burger: "max-width:1010px"
+    huge: "max-width:1110px",
+    burger: "max-width:1010px",
+    large: "max-width:910px",
+    medium: "max-width:650px",
 }

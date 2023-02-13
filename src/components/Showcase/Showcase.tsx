@@ -4,14 +4,11 @@ import InfoPill, { StarInfoPill } from '../InfoPill/InfoPill';
 import BackgroundImage from "../../assets/hero_coffee.png";
 import CoffeeImage from '../../assets/hero_img.png';
 
-import { iProduct } from '../../data/products';
-
 const Showcase : FC = () => {
-  const product : iProduct = {
+  const product = {
     name: "Cappuccino",
     rating: 4.8,
     price: 18,
-    image_path: CoffeeImage
   };
   
   return (
@@ -20,7 +17,7 @@ const Showcase : FC = () => {
         <StarInfoPill big narrow>{product.rating}</StarInfoPill>
         <InfoPill big>{product.price}$</InfoPill>
         <StyledImageHolder>
-          <img src={product.image_path} alt="coffee" />
+          <img src={CoffeeImage} alt="coffee" />
         </StyledImageHolder>
     </Wrapper>
   )
@@ -32,7 +29,7 @@ const Wrapper = styled.figure`
       var(--color-secondary);
     background-size: contain;
 
-    width: min(41.5rem, 100%);
+    width: min(41.5rem, 90%);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
 

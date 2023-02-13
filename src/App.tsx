@@ -18,7 +18,7 @@ const App : FC = () => {
 const Wrapper = styled.div`
     position: relative;
     width: 100%;
-    overflow-x: hidden;
+    
 `;
 
 export default App

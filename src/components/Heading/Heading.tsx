@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
+import { BREAKPOINTS } from '../../styles/variables';
 
 export enum HeadingLevel {
     Heading = "h1",
@@ -21,7 +22,7 @@ const Heading : FC<IHeadingProps> = ({level, variant, children}) => {
   )
 }
 
-const StyledHeading = styled.h1<IHeadingProps>`
+export const StyledHeading = styled.h1<IHeadingProps>`
   font-size: var(--fs-heading);
   font-weight: 600;
   
@@ -53,6 +54,10 @@ const StyledHeading = styled.h1<IHeadingProps>`
     text-decoration-color: var(--color-primary);
     text-underline-offset: .5rem;
     text-decoration-thickness: .4rem;
+  }
+
+  @media only screen and (${BREAKPOINTS.medium}) {
+    text-align: center;
   }
 `;
 

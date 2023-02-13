@@ -6,6 +6,7 @@ import Heading from '../Heading/Heading';
 import { HeadingLevel } from '../Heading/Heading';
 import ProductCard from '../ProductCard/ProductCard';
 import useFetchProducts from '../../hooks/useFetchProducts';
+import { BREAKPOINTS } from '../../styles/variables';
 
 const PopularSection : FC = () => {
   const products = useFetchProducts(3);
@@ -48,6 +49,7 @@ const CardHolder = styled.div`
   align-items: center;
   position: relative;
   margin-top: 3rem;
+  flex-wrap: wrap;
 
   &:before {
     --cont-width: 120%;
@@ -62,6 +64,23 @@ const CardHolder = styled.div`
     width: var(--cont-width);
     height: 95%;
     border-radius: 6.4rem;
+
+    @media only screen and (${BREAKPOINTS.huge}) {
+      --cont-width: 100vw;
+    }
+  }
+
+  @media only screen and (${BREAKPOINTS.large}) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+    &:before {
+      height: 100%;
+      top: 10%;
+      --cont-width: 80vw;
+    }
   }
 `;
 
