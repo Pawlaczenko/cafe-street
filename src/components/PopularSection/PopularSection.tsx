@@ -5,16 +5,28 @@ import StyledSection from '../../layout/Section/Section';
 import Heading from '../Heading/Heading';
 import { HeadingLevel } from '../Heading/Heading';
 import ProductCard from '../ProductCard/ProductCard';
+import useFetchProducts from '../../hooks/useFetchProducts';
 
 const PopularSection : FC = () => {
+  const products = useFetchProducts(3);
   return (
     <Wrapper>
         <StyledPopularSection>
             <Heading level={HeadingLevel.SubHeading}>Popular <u>Now</u></Heading>
             <CardHolder>
-              <ProductCard title={'Vanilla Latte'} price={16} rating={4.5} description="bread with meat and vegetables" isGlass />
-              <ProductCard title={'Vanilla Latte'} price={16} rating={4.5} description="bread with meat and vegetables" isGlass />
-              <ProductCard title={'Vanilla Latte'} price={16} rating={4.5} description="bread with meat and vegetables" isGlass />
+              {
+                products.map((product, index) => {
+                  return <ProductCard 
+                          title={product.name} 
+                          price={product.price} 
+                          rating={product.rating} 
+                          description={product.description} 
+                          imagePath={product.image_path} 
+                          key={index} 
+                          isGlass 
+                  />;
+                })
+              }
             </CardHolder>
         </StyledPopularSection>
     </Wrapper>
@@ -24,8 +36,8 @@ const PopularSection : FC = () => {
 const Wrapper = styled(StyledSection)`
     width: 100%;
     z-index: 1;
-    position: absolute;
-    bottom: -35vh;
+    /* position: absolute; */
+    /* bottom: -35%; */
 `;
 
 const StyledPopularSection = styled.div`

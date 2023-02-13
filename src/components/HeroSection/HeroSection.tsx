@@ -30,6 +30,23 @@ const HeroSection : FC = () => {
   )
 }
 
+const Wrapper = styled(StyledSection)`
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 110vh;
+      width: 100%;
+      z-index: -1;
+      background: 
+        url(${bgImage}) no-repeat top right,
+        url(${bgImage}) no-repeat bottom left;
+      background-color: var(--color-background);
+      background-size: 25%;
+    }
+`
+
 const StyledHomeSection = styled.div`
   display: flex;
 	align-items: flex-start;
@@ -40,15 +57,6 @@ const StyledHomeSection = styled.div`
     width: 80%;
   }
 `;
-
-const Wrapper = styled(StyledSection)`
-    background: 
-    url(${bgImage}) no-repeat top right,
-    url(${bgImage}) no-repeat bottom left;
-    background-color: var(--color-background);
-    background-size: 25%;
-    min-height: 100vh;
-`
 
 const ButtonContainer = styled.div`
   display: flex;

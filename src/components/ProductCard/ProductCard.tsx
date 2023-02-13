@@ -11,14 +11,16 @@ interface IProductCard {
     price: number,
     rating: number,
     description: string,
-    isGlass: boolean
+    isGlass: boolean,
+    imagePath: string
 }
 
-const ProductCard : FC<IProductCard> = ({price,rating,title,description,isGlass}) => {
+const ProductCard : FC<IProductCard> = ({price,rating,title,description,isGlass,imagePath}) => {
+  const image = `images/products/${imagePath}`;
   return (
     <StyledCard isGlass={isGlass}>
         <StyledCardImage>
-            <img src={photo} alt="caffee" />
+            <img src={image} alt="coffee" />
             <StarInfoPill big={false}>{rating}</StarInfoPill>
         </StyledCardImage>
         <StyledCardInfo>
@@ -48,6 +50,7 @@ const StyledCardImage = styled.figure`
     overflow: hidden;
     position: relative;
     z-index: 1;
+    width: 100%;
 
     & > ${InfoPill} {
       position: absolute;
@@ -80,6 +83,7 @@ const StyledCardInfo = styled.div`
       "description cart";
     grid-column-gap: 3rem;
     align-items: center;
+    grid-template-columns: 1fr min-content;
     
     & > ${StyledCardText} {
       &:nth-child(1){grid-area: title;}
@@ -92,6 +96,7 @@ const StyledCardInfo = styled.div`
 
     & > ${StyledCartButton} {
       grid-area: cart;
+      justify-self: center;
     }
 `;
 
