@@ -1,7 +1,6 @@
 import React from 'react'
 import { FC } from 'react';
 import styled from 'styled-components';
-import photo from '../../assets/products/1.png';
 import { glassBackDrop } from '../../styles/mixins';
 import CartButton, { StyledCartButton } from '../Header/CartButton';
 import InfoPill, { StarInfoPill } from '../InfoPill/InfoPill';
@@ -33,6 +32,13 @@ const ProductCard : FC<IProductCard> = ({price,rating,title,description,isGlass,
   )
 }
 
+const StyledCardText = styled.p<{weight?: number}>`
+  font-size: var(--fs-title);
+  font-weight: ${(props) => props.weight || 600};
+  color: var(--color-secondary);
+  transition: var(--am-primary);
+`;
+
 const StyledCard = styled.div<{isGlass : boolean}>`
     --card-border-radius: 1.5rem;
     
@@ -41,8 +47,18 @@ const StyledCard = styled.div<{isGlass : boolean}>`
     max-width: 35.5rem;
     padding: 2.4rem 1.8rem;
     box-shadow: var(--shadow-heavy);
+    cursor: pointer;
+    transition: var(--am-primary);
 
     ${(props) => props.isGlass && glassBackDrop};
+
+    &:hover {
+      transform: scale(1.05);
+
+      & ${StyledCardText} {
+        color: var(--color-primary);
+      }
+    }
 `;
 
 const StyledCardImage = styled.figure`
@@ -62,12 +78,6 @@ const StyledCardImage = styled.figure`
       position: relative;
       z-index: -2;
     }
-`;
-
-const StyledCardText = styled.p<{weight?: number}>`
-  font-size: var(--fs-title);
-  font-weight: ${(props) => props.weight || 600};
-  color: var(--color-secondary);
 `;
 
 const StyledCardDescription = styled.p`

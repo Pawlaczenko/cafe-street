@@ -21,15 +21,15 @@ export const StyledCartButton = styled.button<IProps>`
     background-color: ${(props) => props.isPrimary ? "var(--color-primary)" : "transparent"};
     cursor: pointer;
 
-    --button-size: ${(props) => props.isSmall ? "2.5rem" : "3.2rem"};
+    --button-size: ${(props) => props.isSmall ? "2.5rem" : "4rem"};
     width: var(--button-size);
     height: var(--button-size);
     position: relative;
 
     & > svg {
         color: ${(props) => props.isPrimary ? "white" : "black"};
-        width: var(--buttons-size);
-        height: var(--buttons-size);
+        width: var(--button-size);
+        height: var(--button-size);
     }
 
     &:hover,

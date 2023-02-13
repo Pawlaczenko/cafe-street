@@ -27,5 +27,13 @@ export const variables = css`
 
         // SPACES
         --website-width: 115.5rem; 
+
+        //ANIMATIONS
+        --am-primary: all .2s ease-in-out;
+
     }
 `;
+
+export const BREAKPOINTS = {
+    burger: "max-width:1010px"
+}

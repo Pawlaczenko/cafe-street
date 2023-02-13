@@ -1,5 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
+import { BREAKPOINTS } from "../../../styles/variables";
 
 const Navigation : FC = () => {
     return (
@@ -21,6 +22,13 @@ export const StyledNavigation = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media only screen and (${BREAKPOINTS.burger}){
+        flex-direction: column;
+        gap: 5rem;
+
+        font-size: var(--fs-title);
+    }
 `;
 
 const StyledNavigationItem = styled.a`

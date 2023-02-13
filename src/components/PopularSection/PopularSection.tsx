@@ -35,9 +35,6 @@ const PopularSection : FC = () => {
 
 const Wrapper = styled(StyledSection)`
     width: 100%;
-    z-index: 1;
-    /* position: absolute; */
-    /* bottom: -35%; */
 `;
 
 const StyledPopularSection = styled.div`
