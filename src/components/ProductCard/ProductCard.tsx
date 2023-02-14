@@ -44,7 +44,7 @@ const StyledCard = styled.div<{isGlass : boolean}>`
     
     background-color: white;
     border-radius: var(--card-border-radius);
-    max-width: 35.5rem;
+    max-width: var(--card-width);
     padding: 2.4rem 1.8rem;
     box-shadow: var(--shadow-heavy);
     cursor: pointer;
