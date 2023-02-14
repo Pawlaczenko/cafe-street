@@ -58,6 +58,8 @@ export const StyledHeading = styled.h1<IHeadingProps>`
 
   @media only screen and (${BREAKPOINTS.medium}) {
     text-align: center;
+    margin: auto;
+    width: 95%;
   }
 `;
 

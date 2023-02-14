@@ -38,5 +38,6 @@ export const BREAKPOINTS = {
     huge: "max-width:1110px",
     burger: "max-width:1010px",
     large: "max-width:910px",
+    about: "max-width:730px",
     medium: "max-width:650px",
 }

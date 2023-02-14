@@ -32,12 +32,13 @@ const HeroSection : FC = () => {
 }
 
 const Wrapper = styled(StyledSection)`
+    position: relative;
     &:before {
       content: "";
       position: absolute;
       left: 0;
       top: 0;
-      height: 110vh;
+      height: 150%;
       width: 100%;
       z-index: -1;
       background: 
