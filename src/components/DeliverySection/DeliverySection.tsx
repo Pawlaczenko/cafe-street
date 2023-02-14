@@ -49,12 +49,6 @@ const StyledDeliveryList = styled.ul`
     gap: 3rem;
 
     list-style-type: none;
-
-    @media only screen and (${BREAKPOINTS.large}) {
-        /* flex-direction: column;
-        gap: 3rem;
-        align-items: stretch; */
-    }
 `;
 
 export default DeliverySection
