@@ -5,7 +5,8 @@ import { BREAKPOINTS } from '../../styles/variables';
 export enum HeadingLevel {
     Heading = "h1",
     SubHeading = "h2",
-    Title = "h3"
+    Title = "h3",
+    SubTitle = "h4"
 }
 
 interface IHeadingProps {
@@ -43,6 +44,9 @@ export const StyledHeading = styled.h1<IHeadingProps>`
   }
   &:is(h3){
     font-size: var(--fs-title);
+  }
+  &:is(h4){
+    font-size: var(--fs-paragraph);
   }
 
   & > mark {

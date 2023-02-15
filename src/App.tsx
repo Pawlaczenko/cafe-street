@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import HeroSection from './components/HeroSection/HeroSection';
 import PopularSection from './components/PopularSection/PopularSection';
 import ProductsSection from './components/ProductsSection/ProductsSection';
+import RecomendationSection from './components/RecomendationSection/RecomendationSection';
 
 const App : FC = () => {
 
@@ -17,6 +18,7 @@ const App : FC = () => {
       <DeliverySection />
       <AboutSection />
       <ProductsSection />
+      <RecomendationSection />
     </Wrapper>
   )
 }
