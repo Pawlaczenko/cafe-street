@@ -32,6 +32,16 @@ export const variables = css`
         //ANIMATIONS
         --am-primary: all .2s ease-in-out;
 
+        @keyframes FadeIn{
+            0% {
+                opacity: 0;
+                transform: translateX(1rem);
+            }    
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }    
+        }
     }
 `;
 

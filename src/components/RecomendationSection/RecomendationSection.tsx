@@ -18,7 +18,7 @@ const RecomendationSection : FC = () => {
                 <Paragraph>We always provide the best service and always maintain the quality of coffee</Paragraph>
             </RecomendationInfo>
             <SliderContainer>
-                <Carousel slidesPerPage={0} />
+                <Carousel slidesPerPage={3} />
             </SliderContainer>
         </StyledRecomendationSection>
     </Wrapper>

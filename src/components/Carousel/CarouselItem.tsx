@@ -5,10 +5,17 @@ import { iPerson } from '../../data/recomendations';
 import { BREAKPOINTS } from '../../styles/variables';
 import Heading, { HeadingLevel } from '../Heading/Heading';
 
-const CarouselItem : FC<iPerson> = ({name, recomendation, photo_path}) => {
+interface ICarouselItemProps  {
+    name: string,
+    recomendation: string,
+    photo_path: string,
+    order: number
+}
+
+const CarouselItem : FC<ICarouselItemProps> = ({name, recomendation, photo_path, order}) => {
   const image = `images/people/${photo_path}`;
   return (
-    <StyledFrame url={image}>
+    <StyledFrame url={image} delay={`${order/10}s`}>
         <StyledFrameInfo>
             <Heading level={HeadingLevel.SubTitle}>{name}</Heading>
             <StyledFrameReview>{recomendation}</StyledFrameReview>
@@ -17,13 +24,15 @@ const CarouselItem : FC<iPerson> = ({name, recomendation, photo_path}) => {
   )
 }
 
-const StyledFrame = styled.figure<{url: string}>`
+const StyledFrame = styled.figure<{url: string, delay: string}>`
     width: 20rem;
     height: 28rem;
     border: .6rem solid var(--color-recomendation);
     position: relative;
-    background: url(${props => props.url}) bottom no-repeat;
+    background: url(${props => props.url}) bottom no-repeat , var(--color-accents);
     background-size: cover;
+    animation: FadeIn .5s ease-in-out both;
+    animation-delay: ${props => props.delay};
 `;
 
 const StyledFrameInfo = styled.figcaption`

@@ -1,25 +1,65 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FC } from 'react';
 import styled from 'styled-components';
-import { REVIEWS } from '../../data/recomendations';
+import { iPerson, REVIEWS } from '../../data/recomendations';
 import { BREAKPOINTS } from '../../styles/variables';
+import CarouselController from './CarouselController';
 import CarouselItem from './CarouselItem';
 
 interface IProps {
     slidesPerPage: number,
 }
 
-const Carousel : FC<IProps> = (slidesPerPage) => {
+const Carousel : FC<IProps> = ({slidesPerPage}) => {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [slidesArray, setSlidesArray] = useState<iPerson[]>([]);
+
+  const getReviews = () => {
+    let start : number = (currentPage - 1) * slidesPerPage;
+    let end : number = start + slidesPerPage;
+    const reviews = REVIEWS.slice(start,end);
+
+    //Fire Animation
+
+    setSlidesArray(reviews);
+  }
+
+  const getPageCount = () => {
+    return Math.ceil(REVIEWS.length / slidesPerPage);
+  }
+
+  const handlePageChange = (page : number) => {
+    setCurrentPage(page);
+  }
+
+  useEffect(() => {
+    getReviews();
+  },[currentPage]);
+
   return (
     <StyledCarousel>
-        <CarouselItem name={REVIEWS[0].name} recomendation={REVIEWS[0].recomendation} photo_path={REVIEWS[0].photo_path} />
-        <CarouselItem name={REVIEWS[1].name} recomendation={REVIEWS[1].recomendation} photo_path={REVIEWS[1].photo_path} />
-        <CarouselItem name={REVIEWS[2].name} recomendation={REVIEWS[2].recomendation} photo_path={REVIEWS[2].photo_path} />
+      <SlidesContainer>
+        {
+          slidesArray.map((slide,index) => 
+            <CarouselItem 
+              name={slide.name} 
+              recomendation={slide.recomendation} 
+              photo_path={slide.photo_path} 
+              key={Math.random()}
+              order={index}
+              />)
+        }
+      </SlidesContainer>
+      <CarouselController currentPage={currentPage} pageCount={getPageCount()} handleClick={handlePageChange} />
     </StyledCarousel>
   )
 }
 
 const StyledCarousel = styled.div`
+    
+`;
+
+const SlidesContainer = styled.div`
     display: flex;
     justify-content: space-between;
     gap:3rem;
