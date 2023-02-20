@@ -20,6 +20,14 @@ const Header : FC = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [sticky]);
 
+    useEffect(() => {
+        const handleUrlChange = () => {
+            toggleOpen(false);
+        }
+        window.addEventListener("hashchange", handleUrlChange);
+        return () => window.removeEventListener("hashchange", handleUrlChange);
+    }, []);
+
     const handleMenuOpen = () => toggleOpen(!isOpen);
 
     return(

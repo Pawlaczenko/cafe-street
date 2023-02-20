@@ -23,7 +23,7 @@ const HeroSection : FC = () => {
             <TransparentButton isTiny>More menu</TransparentButton>
           </ButtonContainer>
         </FlexContainer>
-        <FlexContainer end>
+        <FlexContainer end={true}>
           <Showcase />
         </FlexContainer>
       </StyledHomeSection>

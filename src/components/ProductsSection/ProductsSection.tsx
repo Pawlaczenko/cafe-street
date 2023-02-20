@@ -9,7 +9,7 @@ import ProductCard from '../ProductCard/ProductCard';
 const ProductsSection : FC = () => {
     const products = useFetchProducts();
     return (
-        <Wrapper>
+        <Wrapper id="products">
             <StyledProductsSection>
                 <Heading level={HeadingLevel.SubHeading}>Special menu <u>for you</u></Heading>
             </StyledProductsSection>
@@ -48,7 +48,6 @@ const StyledProductsGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
     gap: 4rem;
     justify-items: center;
-
 `;
 
 export default ProductsSection
