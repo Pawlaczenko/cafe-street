@@ -60,11 +60,8 @@ const StyledCard = styled.div<{isGlass : boolean}>`
         color: var(--color-primary);
       }
     }
-
-    *:has(${`> &`}){
-      transform-style: preserve-3d;
-    }
 `;
+
 const StyledCardImage = styled.figure`
     border-radius: var(--card-border-radius);
     overflow: hidden;
