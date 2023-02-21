@@ -1,10 +1,10 @@
-interface iPerson {
+export interface iPerson {
     name: string;
     recomendation: string;
     photo_path: string;
 }
 
-export const Recomendations : Array<iPerson> = [
+export const REVIEWS : Array<iPerson> = [
     {
         name: "Naura",
         recomendation: "I really love the cappucino, the coffee was very smooth",
@@ -19,5 +19,35 @@ export const Recomendations : Array<iPerson> = [
         name: "Azura",
         recomendation: "The coffee menu here is very good",
         photo_path: "person_3.jpg"
+    },
+    {
+        name: "Mike",
+        recomendation: "Delicious coffee and cute owl-themed decor.",
+        photo_path: "person_4.jpg"
+    },
+    {
+        name: "Ann",
+        recomendation: "Friendly staff and consistently good drinks.",
+        photo_path: "person_5.jpg"
+    },
+    {
+        name: "Nicole",
+        recomendation: "Great atmosphere and top-notch coffee.",
+        photo_path: "person_6.jpg"
+    },
+    {
+        name: "Jay",
+        recomendation: " A great spot for studying or working",
+        photo_path: "person_7.jpg"
+    },
+    {
+        name: "Ellie",
+        recomendation: "Smooth and rich coffee",
+        photo_path: "person_8.jpg"
+    },
+    {
+        name: "Nataniel",
+        recomendation: "A go-to spot for a morning pick-me-up",
+        photo_path: "person_9.jpg"
     },
 ];

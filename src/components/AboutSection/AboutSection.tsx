@@ -11,7 +11,7 @@ import { BREAKPOINTS } from '../../styles/variables';
 
 const AboutSection : FC = () => {
   return (
-    <Wrapper>
+    <Wrapper id="about">
         <StyledAboutSection>
             <StyledAboutImage narrow>
                 <img src={AboutImage} alt="Coffee on a table" />

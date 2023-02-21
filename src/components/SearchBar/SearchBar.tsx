@@ -4,31 +4,31 @@ import { FiSearch } from "react-icons/fi";
 
 const SearchBar : FC = () => {
     return(
-        <StyledSearchBarWrapper>
+        <StyledTextInputWrapper>
             <StyledSearchButton>
                 <FiSearch />
             </StyledSearchButton>
             <StyledInput type="text" placeholder="Search" />
-        </StyledSearchBarWrapper>   
+        </StyledTextInputWrapper>   
     )
 }
 
-export const StyledSearchBarWrapper = styled.label`
+export const StyledTextInputWrapper = styled.label`
     display: block;
     position: relative;
-    min-width: 28rem;
 
     background-color: white;
     border-radius: 3.5rem;
     box-shadow: var(--shadow-light);
 `;
 
-const StyledInput = styled.input`
-    font-size: var(--fs-tiny);
+export const StyledInput = styled.input`
+    font-size: var(--fs-description);
     color: var(--color-grey-light);
     background-color: transparent;
     border: none;
     border-radius: inherit;
+    min-width: 28rem;
 
     width: 100%;
     height: 100%;

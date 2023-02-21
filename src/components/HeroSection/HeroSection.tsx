@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Heading,{HeadingLevel, StyledHeading} from '../Heading/Heading';
 import bgImage from '../../assets/bg_img_hero.png';
 import { StyledSection } from '../../layout/Section/Section';
-import Paragraph, { StyledParagraph } from '../Paragraph/Paragraph';
+import Paragraph from '../Paragraph/Paragraph';
 import {PrimaryButton, TransparentButton} from '../Button/Button';
 import CartButton from '../Header/CartButton';
 import Showcase from '../Showcase/Showcase';
@@ -11,7 +11,7 @@ import { BREAKPOINTS } from '../../styles/variables';
 
 const HeroSection : FC = () => {
   return (
-    <Wrapper>
+    <Wrapper id="home">
       <StyledHomeSection>
         <FlexContainer>
           <Heading level={HeadingLevel.Heading} variant="brown">
@@ -23,7 +23,7 @@ const HeroSection : FC = () => {
             <TransparentButton isTiny>More menu</TransparentButton>
           </ButtonContainer>
         </FlexContainer>
-        <FlexContainer end>
+        <FlexContainer end={true}>
           <Showcase />
         </FlexContainer>
       </StyledHomeSection>
@@ -72,7 +72,7 @@ const StyledHomeSection = styled.div`
     gap: 5rem;
     margin-bottom: 10rem;
 
-    & ${StyledParagraph} {
+    & ${Paragraph} {
       text-align: center;
       width: 70%;
     }

@@ -26,11 +26,22 @@ export const variables = css`
         --fs-tiny: 1.2rem;
 
         // SPACES
-        --website-width: 115.5rem; 
+        --website-width: 115.5rem;
+        --card-width: 35.5rem;
 
         //ANIMATIONS
         --am-primary: all .2s ease-in-out;
 
+        @keyframes FadeIn{
+            0% {
+                opacity: 0;
+                transform: translateX(1rem);
+            }    
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }    
+        }
     }
 `;
 

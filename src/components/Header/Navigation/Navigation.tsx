@@ -3,17 +3,27 @@ import styled from "styled-components";
 import { BREAKPOINTS } from "../../../styles/variables";
 
 const Navigation : FC = () => {
+    const NavigationItems : {id: string, text: string}[] = [
+        {
+            id: "#about",
+            text: "About us"
+        },
+        {
+            id: "#products",
+            text: "Our Products"
+        },
+        {
+            id: "#delivery",
+            text: "Delivery"
+        },
+    ];
     return (
-        <StyledNavigation>        
-                <StyledNavigationItem href="#about">
-                    About us
-                </StyledNavigationItem>                    
-                <StyledNavigationItem href="#products">
-                    Our Product
-                </StyledNavigationItem>                    
-                <StyledNavigationItem href="#delivery">
-                    Delivery
-                </StyledNavigationItem>            
+        <StyledNavigation>
+            {
+                NavigationItems.map(item => (
+                    <StyledNavigationItem href={item.id} >{item.text}</StyledNavigationItem>
+                ))
+            }              
         </StyledNavigation>
     );
 }

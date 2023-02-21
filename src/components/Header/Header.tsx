@@ -18,12 +18,22 @@ const Header : FC = () => {
         }
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [sticky]);
+    }, []);
+
+    useEffect(() => {
+        const handleUrlChange = () => {
+            toggleOpen(false);
+        }
+        window.addEventListener("hashchange", handleUrlChange);
+        return () => window.removeEventListener("hashchange", handleUrlChange);
+    }, []);
 
     const handleMenuOpen = () => toggleOpen(!isOpen);
 
     return(
-        <Wrapper as={"header"} isSticky={sticky} >
+        <Wrapper 
+            as={"header"}
+            isSticky={sticky}>
             <HeaderWrapper>
                 <Logo />
                 <SideMenu isOpen={isOpen}>
