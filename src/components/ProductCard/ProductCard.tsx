@@ -51,17 +51,19 @@ const StyledCard = styled.div<{isGlass : boolean}>`
     box-shadow: var(--shadow-heavy);
     cursor: pointer;
     transition: var(--am-primary);
-
+    
     ${(props) => props.isGlass && glassBackDrop}
 
     &:hover {
-      transform: scale(1.01);
       & ${StyledCardText} {
         color: var(--color-primary);
       }
     }
-`;
 
+    *:has(${`> &`}){
+      transform-style: preserve-3d;
+    }
+`;
 const StyledCardImage = styled.figure`
     border-radius: var(--card-border-radius);
     overflow: hidden;
