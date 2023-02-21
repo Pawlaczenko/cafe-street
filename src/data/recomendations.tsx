@@ -21,32 +21,32 @@ export const REVIEWS : Array<iPerson> = [
         photo_path: "person_3.jpg"
     },
     {
-        name: "Ann",
+        name: "Mike",
         recomendation: "Delicious coffee and cute owl-themed decor.",
         photo_path: "person_4.jpg"
     },
     {
-        name: "Mike",
+        name: "Ann",
         recomendation: "Friendly staff and consistently good drinks.",
         photo_path: "person_5.jpg"
     },
     {
-        name: "Jay",
+        name: "Nicole",
         recomendation: "Great atmosphere and top-notch coffee.",
         photo_path: "person_6.jpg"
     },
     {
-        name: "Nicole",
+        name: "Jay",
         recomendation: " A great spot for studying or working",
         photo_path: "person_7.jpg"
     },
     {
-        name: "Richard",
+        name: "Ellie",
         recomendation: "Smooth and rich coffee",
         photo_path: "person_8.jpg"
     },
     {
-        name: "Natalie",
+        name: "Nataniel",
         recomendation: "A go-to spot for a morning pick-me-up",
         photo_path: "person_9.jpg"
     },

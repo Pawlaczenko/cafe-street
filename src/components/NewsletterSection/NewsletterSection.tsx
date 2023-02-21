@@ -35,7 +35,7 @@ const StyledNewsletterSection = styled.div`
         linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
         url(${backImg}) center no-repeat;
     background-size: cover;
-    padding: 13rem 0;
+    padding: 13rem .5rem;
     border-radius: 2.4rem;
 
     display: flex;

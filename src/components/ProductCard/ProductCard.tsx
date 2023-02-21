@@ -17,10 +17,12 @@ interface IProductCard {
 const ProductCard : FC<IProductCard> = ({price,rating,title,description,isGlass,imagePath}) => {
   const image = `images/products/${imagePath}`;
   return (
-    <StyledCard isGlass={isGlass}>
+    <StyledCard 
+      isGlass={isGlass}
+    >
         <StyledCardImage>
-            <img src={image} alt="coffee" />
-            <StarInfoPill big={false}>{rating}</StarInfoPill>
+            <img src={image} alt={title} />
+            <StarInfoPill big={false}>{rating.toFixed(1)}</StarInfoPill>
         </StyledCardImage>
         <StyledCardInfo>
           <StyledCardText>{title}</StyledCardText>
@@ -41,7 +43,7 @@ const StyledCardText = styled.p<{weight?: number}>`
 
 const StyledCard = styled.div<{isGlass : boolean}>`
     --card-border-radius: 1.5rem;
-    
+
     background-color: white;
     border-radius: var(--card-border-radius);
     max-width: var(--card-width);
@@ -50,17 +52,19 @@ const StyledCard = styled.div<{isGlass : boolean}>`
     cursor: pointer;
     transition: var(--am-primary);
 
-    ${(props) => props.isGlass && glassBackDrop};
+    ${(props) => props.isGlass && glassBackDrop}
 
     &:hover {
-      transform: scale(1.05);
-
+      transform: scale(1.01);
       & ${StyledCardText} {
         color: var(--color-primary);
       }
     }
-`;
 
+    *:has(${`> &`}){
+      transform-style: preserve-3d;
+    }
+`;
 const StyledCardImage = styled.figure`
     border-radius: var(--card-border-radius);
     overflow: hidden;

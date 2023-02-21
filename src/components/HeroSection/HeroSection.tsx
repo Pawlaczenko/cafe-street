@@ -11,7 +11,7 @@ import { BREAKPOINTS } from '../../styles/variables';
 
 const HeroSection : FC = () => {
   return (
-    <Wrapper>
+    <Wrapper id="home">
       <StyledHomeSection>
         <FlexContainer>
           <Heading level={HeadingLevel.Heading} variant="brown">

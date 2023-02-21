@@ -12,6 +12,7 @@ export const reset = css`
     //3. Allow percentage-based heights in the application
     html, body {
         /* height: 100%; */
+        scroll-behavior: smooth;
     }
     // Typographic tweaks!
     // 4. Add accessible line-height

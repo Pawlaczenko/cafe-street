@@ -10,20 +10,23 @@ export enum HeadingLevel {
 }
 
 interface IHeadingProps {
-    level?: HeadingLevel,
+    level: HeadingLevel,
     variant?: "black" | "white" | "brown";
     children: React.ReactNode
 }
 
 const Heading : FC<IHeadingProps> = ({level, variant, children}) => {
   return (
-    <StyledHeading as={level} variant={variant}>
+    <StyledHeading 
+      as={level}
+      variant={variant}
+    >
         {children}
     </StyledHeading>
   )
 }
 
-export const StyledHeading = styled.h1<IHeadingProps>`
+export const StyledHeading = styled.h1<{variant?: "black" | "white" | "brown";}>`
   font-size: var(--fs-heading);
   font-weight: 600;
   
